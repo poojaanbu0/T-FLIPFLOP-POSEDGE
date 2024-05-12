@@ -22,21 +22,61 @@ This circuit has single input T and two outputs Qtt & Qtt’. The operation of T
 Here, Qtt & Qt+1t+1 are present state & next state respectively. So, T flip-flop can be used for one of these two functions such as Hold, & Complement of present state based on the input conditions, when positive transition of clock signal is applied. The following table shows the characteristic table of T flip-flop. Inputs Present State Next State
 
 ![image](https://github.com/naavaneetha/T-FLIPFLOP-POSEDGE/assets/154305477/cdd7fb32-539f-4b66-bb8d-f305a153c886)
-
  
 From the above characteristic table, we can directly write the next state equation as Q(t+1)=T′Q(t)+TQ(t)′ ⇒Q(t+1)=T⊕Q(t)
 
 **Procedure**
 
 /* write all the steps invloved */
+```
+Step 1: Open Quartus II in your laptop.
+
+Step 2: Write code to implement SR flipflop using verilog and validating their functionality using their functional tables.
+
+Step 3: Run compilation to check for errors.
+
+Step 4: Open waveform output and load input values.
+
+Step 5: Run simulation to get the output.
+
+Step 6: Open in RTL viewers to get RTL diagram output.
+```
 
 **PROGRAM**
 
 /* Program for flipflops and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
 */
+```
+Developed By: POOJA A
+Register No: 212222240072
+```
+
+```
+module ex9( input clk, rst_n, input t,
+output reg q,
+output q_bar
+);
+always@(posedge clk) 
+begin 
+if(!rst_n)
+ q<=0;
+ else
+ if(t)
+ q<=~q;
+ else
+ q<=q;
+ end
+ 
+assign q_bar = ~q;
+endmodule
+```
 
 **RTL LOGIC FOR FLIPFLOPS**
+![image](https://github.com/poojaanbu0/T-FLIPFLOP-POSEDGE/assets/119390329/07365947-07c3-4d0b-aa66-6ab949eebc1d)
+
 
 **TIMING DIGRAMS FOR FLIP FLOPS**
+![image](https://github.com/poojaanbu0/T-FLIPFLOP-POSEDGE/assets/119390329/9cbf0840-da39-4799-bee7-b68c418edb2d)
 
 **RESULTS**
+ T flipflop using verilog and validating their functionality using their functional tables completed.
